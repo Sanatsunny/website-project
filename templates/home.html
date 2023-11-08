@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VINTAGE INFO SOLUTIONS</title>
-
+    {% block style %}
     <style>
         /* Reset some default browser styles */
         body, ul {
@@ -40,7 +41,7 @@
         }
 
         /* Style the homepage content */
-        .content {
+        .sanat {
             text-align: center;
             padding: 20px;
         }
@@ -54,25 +55,36 @@
             background: linear-gradient(to right, #71b7e6, #9b59b6);
         }
     </style>
+    {% endblock %}
 </head>
 <body>
+
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#registration">Registration</a></li>
-                <li><a href="#login">Login</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'registration' %}">Registration</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                 <li><a href="{% url 'course' %}">Courses</a></li>
             </ul>
-        </nav>
-    </header>
-    <img src="vintage.png">
 
-    <div class="content">
+        </nav>
+
+    </header>
+
+
+<!--    <img src="{% static 'image/logo.png' %}" style="margin-left:200px;">-->
+
+    <div class="sanat">
+        {% block content %}
         <h1>Welcome to Vintage Info Solutions</h1>
-        <p>This is your homepage. You can add content here.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        {% endblock %}
     </div>
+
+
 
     <!-- Add more content sections or elements as needed -->
 

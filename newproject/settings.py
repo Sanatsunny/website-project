@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'vintage'
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -118,7 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -126,8 +130,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT=587
-EMAIL_HOST_USER='devikathampi20@gmail.com'
-EMAIL_HOST_PASSWORD='cyzwjoyygcazryut'
+EMAIL_HOST_USER='sunnysanat0@gmail.com'
+EMAIL_HOST_PASSWORD='iitq dumk godh wpte'
 EMAIL_USE_TLS=True
 
 STATICFILES_DIRS=[
@@ -135,3 +139,4 @@ STATICFILES_DIRS=[
 ]
 MEDIA_ROOT=os.path.join(BASE_DIR,'MEDIA')
 MEDIA_URL='/Media/'
+

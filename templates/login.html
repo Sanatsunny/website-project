@@ -1,11 +1,15 @@
 <!DOCTYPE html>
+{% extends 'home.html' %}
+{% block content %}
+{% load static %}
 <!-- Created By CodingLab - www.codinglabweb.com -->
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
         * {
@@ -134,21 +138,27 @@
             }
         }
     </style>
+
 </head>
 
 <body>
+
+
 <div class="container">
+
+
     <div class="title">login</div>
     <div class="content">
-        <form action="#">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Username</span>
-                    <input type="text" placeholder="Enter your username" required>
+                    <input type="text" name="username" placeholder="Enter your username" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Password</span>
-                    <input type="password" placeholder="Enter your password" required>
+                    <input type="password" name="password" placeholder="Enter your password" required>
                 </div>
             </div>
             <div class="button">
@@ -157,5 +167,8 @@
         </form>
     </div>
 </div>
+
 </body>
+
 </html>
+{% endblock %}
